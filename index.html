@@ -674,10 +674,12 @@
             });
         },
         writeToLocalStorage () {
-            window.localStorage.setItem('web_app_key', 'Test text!')
+            window.localStorage.setItem('web_app_key', 'Test text')
+            alert('Completed!');
         },
         readFromLocalStorage () {
-            window.localStorage.getItem('web_app_key')
+            const value = window.localStorage.getItem('web_app_key') || ''
+            alert('Text from localStorage:' + value);
         }
     }
 
