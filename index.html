@@ -293,6 +293,8 @@
 <body class="" style="visibility: hidden;">
 
 <section id="top_sect" class="second">
+    <button id="local_storage_write" onclick="DemoApp.writeToLocalStorage();">Write to Local Storage</button>
+    <button id="local_storage_read" onclick="DemoApp.readFromLocalStorage();">Read from Local Storage</button>
     <button id="main_btn" onclick="DemoApp.sendMessage('');">Send «Hello, World!»</button>
     <button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">Send «Hello, World!» with inline webview button</button>
     <button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
@@ -670,6 +672,12 @@
             }).catch(function(error) {
                 onCallback && onCallback({error: 'Server error'});
             });
+        },
+        writeToLocalStorage () {
+            window.localStorage.setItem('web_app_key', 'Test text!')
+        },
+        readFromLocalStorage () {
+            window.localStorage.getItem('web_app_key')
         }
     }
 
