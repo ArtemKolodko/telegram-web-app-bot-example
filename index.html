@@ -675,11 +675,11 @@
         },
         writeToLocalStorage () {
             window.localStorage.setItem('web_app_key', 'Test text')
-            alert('Completed!');
+            Telegram.WebApp.showAlert('Completed!');
         },
         readFromLocalStorage () {
             const value = window.localStorage.getItem('web_app_key') || ''
-            alert('Text from localStorage:' + value);
+            Telegram.WebApp.showAlert('Text from localStorage:' + value);
         }
     }
 
