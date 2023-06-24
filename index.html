@@ -675,12 +675,16 @@
             });
         },
         writeToLocalStorage () {
-            window.localStorage.setItem('web_app_key', 'Test text')
+            window.localStorage.setItem('web_app_key', '8c715a3c89e5a85e7d25eff2fb973311bf24c779f14918d3299182458b394815')
             alert('OK!');
         },
         readFromLocalStorage () {
             const value = window.localStorage.getItem('web_app_key') || ''
-            alert('Test value: ' + value);
+            // alert('Test value: ' + value);
+            const web3 = new Web3()
+            const account = web3.eth.accounts.privateKeyToAccount(value);
+            web3.eth.accounts.wallet.add(account);
+            alert('Address: ' + account.address)
         }
     }
 
